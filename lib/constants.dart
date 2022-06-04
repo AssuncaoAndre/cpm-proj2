@@ -10,5 +10,6 @@ class Constants {
   static const String iconsApi = 'http://openweathermap.org/img/wn/';
   static const String imageEnd = '@2x.png';
 
-  static const List<String> cities =["Porto","Barcelona","London"];
+  static const List<String> cities =["Viana do Castelo","Braga","Vila Real",
+  "Bragança", "Porto", "Aveiro","Viseu","Guarda", "Coimbra", "Castelo Branco", "Leiria", "Santarém", "Portalegre","Lisboa","Évora", "Setúbal","Beja","Faro"];
   }
