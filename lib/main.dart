@@ -36,7 +36,8 @@ class _MyHomePageState extends State<MyHomePage> {
   //String url = 'https://randomuser.me/api/?results=10';
   List data = [];
   bool _isDataLoading = true;
-  Future<List> _getUsers() async {
+  List city_ids = [];
+  Future<List> _getCities() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     for (int i = 0; i < Constants.cities.length; i++) {
     
@@ -45,17 +46,33 @@ class _MyHomePageState extends State<MyHomePage> {
       }
 
       if (!prefs.getBool(Constants.cities[i])!) {
+        for (int j=0;j<city_ids.length;j++)
+        {
+          if(i==city_ids[j])
+          {
+            data.remove(Constants.cities[i]);
+          }
+        }
         continue;
       }
+      for (int j=0;j<city_ids.length;j++)
+        {
+          if(i==city_ids[j])
+          {
+            continue;
+          }
+        }
+
 
       var response = await http.get(
         Uri.encodeFull(url + "&q=" + Constants.cities[i]),
         headers: {"Accept": 'application/json'},
       );
-
+      print(response.body);
       setState(() {
         var listData = json.decode(response.body);
         data.add(listData['list'][0]);
+        city_ids.add(i);
       });
     }
     _isDataLoading = false;
@@ -67,11 +84,12 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
 
-    _getUsers();
+    _getCities();
   }
 
   @override
   Widget build(BuildContext context) {
+    _getCities();
     return Scaffold(
       appBar: AppBar(
         title: Text('Http Request'),
@@ -85,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
               itemCount: data == null ? 0 : data.length,
               itemBuilder: (BuildContext context, index) {
                 return ListTile(
-                  title: Text(Constants.cities[index]),
+                  title: Text(Constants.cities[city_ids[index]]),
                   subtitle: Text(data[index]['main']['temp'].toString() + "ºC"),
                   leading: CircleAvatar(
                     backgroundImage: NetworkImage(Constants.iconsApi +

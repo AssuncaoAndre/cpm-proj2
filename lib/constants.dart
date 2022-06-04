@@ -6,7 +6,7 @@ class Constants {
   
   // the properties are static so that we can use them without a class instance
   // e.g. can be retrieved by `LocalStorageKey.saveUserId`.
-  static const String apiKey = '52dfce66a64eea1b695a1bc919b2de8e';
+  static const String apiKey = 'c5739e683246ddc5a1beb8348d8f22a6';
   static const String iconsApi = 'http://openweathermap.org/img/wn/';
   static const String imageEnd = '@2x.png';
 
