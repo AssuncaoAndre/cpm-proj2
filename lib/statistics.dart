@@ -71,11 +71,6 @@ class _StatisticsState extends State<StatisticsPage> {
                 leading:  CircleAvatar(
                   backgroundImage: NetworkImage(Constants.iconsApi+data[index]['weather'][0]['icon']+Constants.imageEnd),
                 ) ,
-                onTap: (){
-                  // pass single user data to detail page
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (BuildContext context)=> DetailPage(data[index])));
-                },
               );
             }
         )
