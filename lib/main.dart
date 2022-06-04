@@ -37,38 +37,38 @@ class _MyHomePageState extends State<MyHomePage> {
   List data = [];
   bool _isDataLoading = true;
   List city_ids = [];
+
   Future<List> _getCities() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     for (int i = 0; i < Constants.cities.length; i++) {
-    
       if (prefs.getBool(Constants.cities[i]) == null) {
         prefs.setBool(Constants.cities[i], false);
       }
 
       if (!prefs.getBool(Constants.cities[i])!) {
-        for (int j=0;j<city_ids.length;j++)
-        {
-          if(i==city_ids[j])
-          {
-            data.remove(Constants.cities[i]);
+        for (int j = 0; j < city_ids.length; j++) {
+          if (i == city_ids[j]) {
+            setState(() {
+              data.removeAt(j);
+              city_ids.removeAt(j);
+            });
           }
         }
         continue;
       }
-      for (int j=0;j<city_ids.length;j++)
-        {
-          if(i==city_ids[j])
-          {
-            continue;
-          }
+      int flag = 0;
+      for (int j = 0; j < city_ids.length; j++) {
+        if (i == city_ids[j]) {
+          flag = 1;
+          break;
         }
-
-
+      }
+      if (flag == 1) continue;
       var response = await http.get(
         Uri.encodeFull(url + "&q=" + Constants.cities[i]),
         headers: {"Accept": 'application/json'},
       );
-      print(response.body);
+      // print(response.body);
       setState(() {
         var listData = json.decode(response.body);
         data.add(listData['list'][0]);
@@ -89,7 +89,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    //_getCities();
     return Scaffold(
       appBar: AppBar(
         title: Text('Http Request'),
@@ -123,10 +122,12 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (BuildContext context) =>
-                      FavoriteCitiesPage()));
+                  context,
+                  MaterialPageRoute(
+                      builder: (BuildContext context) => FavoriteCitiesPage()))
+              .then((value) {
+            _getCities();
+          });
         },
         backgroundColor: Colors.green,
         child: const Icon(Icons.navigation),
