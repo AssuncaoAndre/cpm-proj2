@@ -3,7 +3,6 @@ import 'package:http/http.dart' as http;
 import 'package:proj2/favorite_cities.dart';
 import 'dart:async';
 import 'dart:convert';
-import './detail.dart';
 import 'constants.dart';
 import 'statistics.dart';
 import 'favorite_cities.dart';
