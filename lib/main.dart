@@ -89,7 +89,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    _getCities();
+    //_getCities();
     return Scaffold(
       appBar: AppBar(
         title: Text('Http Request'),
