@@ -124,6 +124,7 @@ class WeatherInfo extends StatelessWidget {
           SizedBox(
             height: 10,
           ),
+          Text('Next Days Preview', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 20), textAlign: TextAlign.left),
           NextDaysWeatherSwipePager(data)
         ],
       ))
@@ -216,7 +217,8 @@ class NextDaysWeatherSwipePager extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return
+      SingleChildScrollView(
         child: Container(
           width: MediaQuery.of(context).size.width,
           height: 300,

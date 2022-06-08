@@ -40,7 +40,7 @@ class _FavoriteCitiesPage extends State<FavoriteCitiesPage> {
   Widget build(BuildContext context) {
     final addButtonStyle = ElevatedButton.styleFrom(
       textStyle: const TextStyle(fontSize: 20),
-      primary: Colors.blueAccent,
+      primary: Colors.green,
       shape: RoundedRectangleBorder(
           //to set border radius to button
           borderRadius: BorderRadius.circular(30)),
@@ -48,7 +48,7 @@ class _FavoriteCitiesPage extends State<FavoriteCitiesPage> {
 
     final removeButtonStyle = ElevatedButton.styleFrom(
       textStyle: const TextStyle(fontSize: 20),
-      primary: Colors.redAccent,
+      primary: Colors.red,
       shape: RoundedRectangleBorder(
           //to set border radius to button
           borderRadius: BorderRadius.circular(30)),
@@ -57,6 +57,7 @@ class _FavoriteCitiesPage extends State<FavoriteCitiesPage> {
     return Scaffold(
         appBar: AppBar(
           title: Text('Http Request'),
+          backgroundColor: Colors.lightBlue[100],
         ),
         body: ListView.builder(
             itemCount: data == null ? 0 : data.length,
