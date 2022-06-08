@@ -56,7 +56,7 @@ class _FavoriteCitiesPage extends State<FavoriteCitiesPage> {
 
     return Scaffold(
         appBar: AppBar(
-          title: Text('Http Request'),
+          title: Text('District Capitals of Portugal'),
           backgroundColor: Colors.lightBlue[100],
         ),
         body: ListView.builder(

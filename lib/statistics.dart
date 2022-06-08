@@ -442,7 +442,7 @@ class CurrentConditions extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Text(
-          '${data[0]['main'][JSONtopics[0]]}º',
+          '${data[0]['main'][JSONtopics[0]].round()}º',
           style: TextStyle(
               fontSize: 80,
               fontWeight: FontWeight.w100),
@@ -453,7 +453,7 @@ class CurrentConditions extends StatelessWidget {
               SizedBox(height: 10),
               Text("Max", style: TextStyle(color: Colors.black54, fontSize: 16)),
               SizedBox( height: 10),
-              Text('${data[0]['main']['temp_max']}º', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16))
+              Text('${data[0]['main']['temp_max'].round()}º', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16))
             ],
           ),
           Padding(
@@ -482,7 +482,7 @@ class CurrentConditions extends StatelessWidget {
               SizedBox(height: 10),
               Text("Min", style: TextStyle(color: Colors.black54, fontSize: 16)),
               SizedBox( height: 10),
-              Text('${data[0]['main']['temp_min']}º', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16))
+              Text('${data[0]['main']['temp_min'].round()}º', style: TextStyle(fontWeight: FontWeight.w700, fontSize: 16))
             ],
           ),
         ]),

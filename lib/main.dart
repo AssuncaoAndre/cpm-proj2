@@ -93,7 +93,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Http Request'),
+        title: Text('Weather App'),
         backgroundColor: Colors.lightBlue[100],
       ),
       body: ListView.builder(
@@ -101,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
           itemBuilder: (BuildContext context, index) {
             return ListTile(
               title: Text(Constants.cities[city_ids[index]]),
-              subtitle: Text(data[index]['main']['temp'].toString() + "º"),
+              subtitle: Text(data[index]['main']['temp'].round().toString() + "º"),
               leading: CircleAvatar(
                 backgroundImage: NetworkImage(Constants.iconsApi +
                     data[index]['weather'][0]['icon'] +
