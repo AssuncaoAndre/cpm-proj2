@@ -922,6 +922,3 @@ class TimeSeriesTemp {
 
   TimeSeriesTemp(this.time, this.value);
 }
-
-
-//Container(child: Text("hello!", style: TextStyle(fontSize: 25)));
