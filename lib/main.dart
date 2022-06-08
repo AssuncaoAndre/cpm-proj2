@@ -114,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         context,
                         MaterialPageRoute(
                             builder: (BuildContext context) =>
-                                StatisticsPage(Constants.cities[index])));
+                                StatisticsPage(Constants.cities[city_ids[index]])));
                   },
                 );
               }),
