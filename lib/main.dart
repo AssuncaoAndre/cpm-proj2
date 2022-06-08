@@ -96,28 +96,27 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text('Http Request'),
         backgroundColor: Colors.lightBlue[100],
       ),
-      body:
-          ListView.builder(
-              itemCount: data == null ? 0 : data.length,
-              itemBuilder: (BuildContext context, index) {
-                return ListTile(
-                  title: Text(Constants.cities[city_ids[index]]),
-                  subtitle: Text(data[index]['main']['temp'].toString() + "º"),
-                  leading: CircleAvatar(
-                    backgroundImage: NetworkImage(Constants.iconsApi +
-                        data[index]['weather'][0]['icon'] +
-                        Constants.imageEnd),
-                  ),
-                  onTap: () {
-                    // pass single user data to detail page
-                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (BuildContext context) =>
-                                StatisticsPage(Constants.cities[city_ids[index]])));
-                  },
-                );
-              }),
+      body: ListView.builder(
+          itemCount: data == null ? 0 : data.length,
+          itemBuilder: (BuildContext context, index) {
+            return ListTile(
+              title: Text(Constants.cities[city_ids[index]]),
+              subtitle: Text(data[index]['main']['temp'].toString() + "º"),
+              leading: CircleAvatar(
+                backgroundImage: NetworkImage(Constants.iconsApi +
+                    data[index]['weather'][0]['icon'] +
+                    Constants.imageEnd),
+              ),
+              onTap: () {
+                // pass single user data to detail page
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (BuildContext context) =>
+                            StatisticsPage(Constants.cities[city_ids[index]])));
+              },
+            );
+          }),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
