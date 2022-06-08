@@ -1,0 +1,10 @@
+^C:\USERS\MARIA\DESKTOP\MIEIC\4MIEIC\2SEMESTRE\CPM\PROJECT\CPM-PROJ2\BUILD\WINDOWS\CMAKEFILES\1DC74FFAD5733BBEAD24A543986B1D4B\INSTALL_FORCE.RULE
+setlocal
+cd .
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

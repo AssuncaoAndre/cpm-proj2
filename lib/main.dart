@@ -18,8 +18,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter HTTP request',
+      title: 'Weather App',
       home: MyHomePage(),
+      theme: ThemeData(
+        primarySwatch: Colors.lightBlue,
+      ),
     );
   }
 }
@@ -91,18 +94,15 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Http Request'),
+        backgroundColor: Colors.lightBlue[100],
       ),
-      body: /*  _isDataLoading
-            ? Center(
-            child: CircularProgressIndicator()
-        )
-            :  */
+      body:
           ListView.builder(
               itemCount: data == null ? 0 : data.length,
               itemBuilder: (BuildContext context, index) {
                 return ListTile(
                   title: Text(Constants.cities[city_ids[index]]),
-                  subtitle: Text(data[index]['main']['temp'].toString() + "ºC"),
+                  subtitle: Text(data[index]['main']['temp'].toString() + "º"),
                   leading: CircleAvatar(
                     backgroundImage: NetworkImage(Constants.iconsApi +
                         data[index]['weather'][0]['icon'] +
@@ -110,7 +110,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                   onTap: () {
                     // pass single user data to detail page
-                    Navigator.push(
+                     Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (BuildContext context) =>
@@ -128,7 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
             _getCities();
           });
         },
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.lightBlue[200],
         child: const Icon(Icons.navigation),
       ),
     );
