@@ -1,0 +1,4 @@
+#Fri Jun 17 20:23:47 WEST 2022
+base.0=/Users/filipenogueira/Desktop/MIEIC/Ano5/Semestre2/CPM/cpm-proj2/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.0=classes.dex
+path.0=classes.dex

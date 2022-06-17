@@ -1,9 +1,0 @@
-C:/Users/maria/Desktop/MIEIC/4MIEIC/2Semestre/CPM/project/cpm-proj2/build/windows/runner/Debug/data/icudtl.dat
-C:/Users/maria/Desktop/MIEIC/4MIEIC/2Semestre/CPM/project/cpm-proj2/build/windows/runner/Debug/flutter_windows.dll
-C:/Users/maria/Desktop/MIEIC/4MIEIC/2Semestre/CPM/project/cpm-proj2/build/windows/runner/Debug/data/flutter_assets/AssetManifest.json
-C:/Users/maria/Desktop/MIEIC/4MIEIC/2Semestre/CPM/project/cpm-proj2/build/windows/runner/Debug/data/flutter_assets/FontManifest.json
-C:/Users/maria/Desktop/MIEIC/4MIEIC/2Semestre/CPM/project/cpm-proj2/build/windows/runner/Debug/data/flutter_assets/fonts/MaterialIcons-Regular.otf
-C:/Users/maria/Desktop/MIEIC/4MIEIC/2Semestre/CPM/project/cpm-proj2/build/windows/runner/Debug/data/flutter_assets/kernel_blob.bin
-C:/Users/maria/Desktop/MIEIC/4MIEIC/2Semestre/CPM/project/cpm-proj2/build/windows/runner/Debug/data/flutter_assets/NOTICES.Z
-C:/Users/maria/Desktop/MIEIC/4MIEIC/2Semestre/CPM/project/cpm-proj2/build/windows/runner/Debug/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
-C:/Users/maria/Desktop/MIEIC/4MIEIC/2Semestre/CPM/project/cpm-proj2/build/windows/runner/Debug/data/flutter_assets/packages/weather_icons/lib/fonts/weathericons-regular-webfont.ttf
