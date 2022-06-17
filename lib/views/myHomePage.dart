@@ -6,7 +6,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:async';
 import 'dart:convert';
 import '../models/constants.dart';
-import '../commands/statistics.dart';r
+import '../commands/statistics.dart';
 import 'favorite_cities.dart';
 
 class MyHomePage extends StatefulWidget {
